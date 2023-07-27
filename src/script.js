@@ -8,7 +8,7 @@
 let highscore = 0;
 let LifeLine = 5;
 let score = 0;
-let secretNumber = Math.floor(Math.random() * 5 + 1);
+let secretNumber = Math.floor(Math.random() * 10 + 1);
 // document.querySelector('.number').textContent = secretNumber;
 console.log(secretNumber);
 document.querySelector(".check").addEventListener("click", function () {
@@ -54,7 +54,8 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".score").textContent = 0;
   document.querySelector(".lifeLine").textContent = LifeLine;
   document.querySelector(".guess").value = "";
-  document.querySelector("body").style.backgroundImage = "url(mushroom.png)";
+  document.querySelector("body").style.backgroundImage =
+    "url(src/mushroom.png)";
   document.querySelector("body").style.backgroundSize = "600px";
   document.querySelector("body").style.backgroundPosition = "center";
   document.querySelector("body").style.backgroundRepeat = "no-repeat;";
