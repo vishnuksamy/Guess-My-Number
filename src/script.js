@@ -25,6 +25,8 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundSize = "600px";
     document.querySelector("body").style.backgroundPosition = "left center";
 
+    setTimeout(myFunction, 2000);
+
     score++;
     document.querySelector(".score").textContent = score;
     if (score > highscore) {
@@ -40,13 +42,32 @@ document.querySelector(".check").addEventListener("click", function () {
     } else {
       document.querySelector(".lifeLine").textContent = 0;
       document.querySelector(".message").textContent =
-        "OOPS...😮SORRY YOU LOST THE GAME😪";
+        "💥💣Sorry you lose click again to play the game";
     }
   }
 });
 
+function myFunction() {
+  if (score > highscore) {
+    highscore = score;
+    document.querySelector(".highscore").textContent = highscore;
+  }
+  secretNumber = Math.floor(Math.random() * 10 + 1);
+  document.querySelector(".message").textContent = "Guess again...😉";
+  document.querySelector(".number").textContent = "?";
+  // document.querySelector(".score").textContent = "0";
+  // document.querySelector(".lifeLine").textContent = LifeLine;
+  document.querySelector(".guess").value = "";
+  document.querySelector("body").style.backgroundImage =
+    "url(src/mushroom.png)";
+  document.querySelector("body").style.backgroundSize = "600px";
+  document.querySelector("body").style.backgroundPosition = "center";
+  document.querySelector("body").style.backgroundRepeat = "no-repeat;";
+}
+
 document.querySelector(".again").addEventListener("click", function () {
   LifeLine = 5;
+  score = 0;
 
   secretNumber = Math.floor(Math.random() * 10 + 1);
   document.querySelector(".message").textContent = "Start guessing...";
